@@ -1,64 +1,42 @@
+@font-face {
+    font-family: inter-regular;
+    src: url(../fonts/Inter-Regular.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: inter-regular;
+    color: white;
 }
 
 body{
     width: 100vw;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.principal{
-    min-width: 320px;
-    max-height: 650px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(13, 13, 13);
+    background-color: #2e2e2e;
 }
 
 .titulo{
-    margin-top: 15px;
-}
-
-.titulo-texto{
-    color: white;
     font-size: 20px;
 }
-.titulo-texto2{
-    color: white;
+.subtitulo{
+    color: #b3b3b3;
     font-size: 15px;
 }
 
-.avaliacoes{
-    height: 600px;
-    width: 260px;
+/* Input */
+.input-nota-group {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
-.avaliacoes-style{
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(64, 61, 61);
-
+.input-nota-group > button {
+    flex: 1;
 }
-
-.texto{
-    width: 190px;
-    color: white;
-    font-size: 15px;
+.input-nota-group > input {
+    flex: 2;
 }
 
 input{
@@ -66,8 +44,10 @@ input{
     width: 90px;
     font-size: 20px;
     text-align: center;
-    color: white;
-    background-color: rgb(64, 61, 61);
+    background-color: transparent;
+    border-width: 0 0 1px 0;
+    border-color: white;
+    transition: .2s;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -77,33 +57,85 @@ input[type="number"]::-webkit-outer-spin-button{
 }
 input[type="number"]{
     -moz-appearance: textfield;
+    margin: 0px 8px;
+}
+input[type="number"]:focus{
+    outline: none;
+    border-bottom: 1px solid #00A09F;
 }
 
-.btn-menos,
-.btn-mais{
-    background-color:rgb(83, 75, 75);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    height: 30px;
-    width: 60px;
-    border: none;
-    cursor: pointer;
-}
-
-.botoes{
-    margin-bottom: 15px;
-    margin-left: 175px;
-}
-
-.calcular{
-    width: 80px;
-    height: 40px;
+/* Layout */
+.principal{
+    padding: 20px;
     border-radius: 7px;
-    color: rgb(255, 255, 255);
+    background-color: #1D1D1B;
+    box-shadow: 0px 0px 20px #1b1b1b;
+}
+
+.avaliacoes{
+    padding: 20px 0;
+}
+
+.avaliacao-card{
+    padding: 12px;
+    border-radius: 7px;
+    background-color: #2A2A27;
+}
+
+.avaliacoes > .avaliacao-card:not(:first-child) {
+    margin-top: 12px;
+}
+
+.avaliacao-card > p {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.principal-rodape {
+    text-align: right;
+}
+
+/* Botões */
+.btn-principal{
+    padding: 8px 16px;
+    border-radius: 7px;
     font-size: 15px;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    background-color: rgb(20, 160, 160);
+    background-color: #14a0a0;
+    transition: .2s;
+}
+
+.btn-principal:hover {
+    background-color: #19b6b6;
+    box-shadow: 0 0 16px rgba(25, 182, 182, 0.2);
+}
+
+.btn-secundario{
+    background-color: #3d3d39;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: .2s;
+}
+
+.btn-secundario:hover{
+    background-color: #4e4e4a;
+}
+
+.btn-discreto {
+    padding: 8px 16px;
+    border-radius: 7px;
+    color: #646463;
+    font-size: 15px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.btn-discreto:hover {
+    background-color: rgba(100, 100, 99, 0.2);
 }
