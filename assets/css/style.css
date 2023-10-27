@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{
+    min-width: 320px;
+    max-height: 650px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(13, 13, 13);
+}
+
+.titulo{
+    margin-top: 15px;
+}
+
+.titulo-texto{
+    color: white;
+    font-size: 20px;
+}
+.titulo-texto2{
+    color: white;
+    font-size: 15px;
+}
+
+.avaliacoes{
+    height: 600px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.avaliacoes-style{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(64, 61, 61);
+
+}
+
+.texto{
+    width: 190px;
+    color: white;
+    font-size: 15px;
+}
+
+input{
+    height: 30px;
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: rgb(64, 61, 61);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+.btn-menos,
+.btn-mais{
+    background-color:rgb(83, 75, 75);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 30px;
+    width: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.botoes{
+    margin-bottom: 15px;
+    margin-left: 175px;
+}
+
+.calcular{
+    width: 80px;
+    height: 40px;
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(20, 160, 160);
+}
