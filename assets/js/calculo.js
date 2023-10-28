@@ -88,7 +88,7 @@ function calcularMedia(notas) {
                         return [i, i * pesoNota / 10]
                     }
                 }
-                return 11
+                return [11,11]
             }
 
             if (simulado === false) {
@@ -96,7 +96,7 @@ function calcularMedia(notas) {
                 const notaNecessaria0 = notaNecessaria(porcentagem0, valorRestante)
                 const notaNecessariareal0 = notaNecessariaReal(notaNecessaria0, 0.5)
                 if (notaNecessariareal0[0] === 11) {
-                    resultado.push('não tem como ser aprovado');
+                    resultado.push(`não tem como ser aprovado`);
                 } else {   
                     media2 = media2 + notaNecessariareal0[1]
                     console.log(notas[0]);
