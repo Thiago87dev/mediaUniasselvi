@@ -8,33 +8,26 @@ function calcularMedia(notas) {
     let avFinal = false
     let somaPesoNotas = 0
 
-
     for (let i = 0; i < notas.length; i++) {
         if (i === 0) {
             if (notas[i] === 'n') {
                 notas[i] = 0
-                console.log('Nota do simulado não enviada');
-                resultado.push('Nota do simulado não enviada')
                 somaPesoNotas = somaPesoNotas + 0.5
                 continue
             } else {
                 simulado = true
                 notas[i] = notas[i] * 0.5 / 10
-                console.log(`Nota do simulado: ${notas[i]}`)
-                resultado.push(`Nota do simulado: ${notas[i]}`)
             }
         }
 
         if (i === 1) {
             if (notas[i] === 'n') {
                 notas[i] = 0
-                console.log(`nota da avaliação ${i} não enviada`)
                 somaPesoNotas = somaPesoNotas + 1.5
                 continue
             } else {
                 av1 = true
                 notas[i] = notas[i] * 1.5 / 10
-                console.log(`Nota da avaliação ${i}: ${notas[i]}`)
                 media += notas[i]
             }
         }
@@ -42,13 +35,11 @@ function calcularMedia(notas) {
         if (i === 2) {
             if (notas[i] === 'n') {
                 notas[i] = 0
-                console.log(`nota da avaliação ${i} não enviada`)
                 somaPesoNotas = somaPesoNotas + 1.5
                 continue
             } else {
                 av2 = true
                 notas[i] = notas[i] * 1.5 / 10
-                console.log(`Nota da avaliação ${i}: ${notas[i]}`)
                 media += notas[i]
             }
         }
@@ -56,13 +47,11 @@ function calcularMedia(notas) {
         if (i === 3) {
             if (notas[i] === 'n') {
                 notas[i] = 0
-                console.log('Nota da avaliação discursiva não enviada');
                 somaPesoNotas = somaPesoNotas + 4
                 continue
             } else {
                 avDiscursiva = true
                 notas[i] = notas[i] * 4 / 10
-                console.log(`Nota da avaliação discursiva: ${notas[i]}`)
                 media += notas[i]
             }
         }
@@ -70,13 +59,11 @@ function calcularMedia(notas) {
         if (i === 4) {
             if (notas[i] === 'n') {
                 notas[i] = 0
-                console.log('Nota da avaliação final não enviada');
                 somaPesoNotas = somaPesoNotas + 3
                 continue
             } else {
                 avFinal = true
                 notas[i] = notas[i] * 3 / 10
-                console.log(`Nota da avaliação final: ${notas[i]}`)
                 media += notas[i]
             }
         }
@@ -84,7 +71,8 @@ function calcularMedia(notas) {
     }
 
     if (media >= 7) {
-        console.log('vc ja esta aprovado')
+
+        resultado.push('vc ja esta aprovado')
     } else {
         if (somaPesoNotas > 0) {
             let media2 = (media + notas[0])
@@ -95,27 +83,24 @@ function calcularMedia(notas) {
             }
 
             function notaNecessariaReal(notaNecessaria, pesoNota) {
-                console.log(notaNecessaria);
                 for (let i = 1; i <= 10; i++) {
                     if (i * pesoNota / 10 >= notaNecessaria || (i * pesoNota / 10) + (media2) >= 7) {
-                        console.log(i);
                         return [i, i * pesoNota / 10]
                     }
                 }
                 return 11
             }
 
-
             if (simulado === false) {
                 const porcentagem0 = 0.5 / somaPesoNotas * 100
                 const notaNecessaria0 = notaNecessaria(porcentagem0, valorRestante)
                 const notaNecessariareal0 = notaNecessariaReal(notaNecessaria0, 0.5)
                 if (notaNecessariareal0[0] === 11) {
-                    console.log('não tem como ser aprovado');
-                } else {
+                    resultado.push('não tem como ser aprovado');
+                } else {   
                     media2 = media2 + notaNecessariareal0[1]
-                    notas[0] = notaNecessariareal0[1]
-                    console.log(`Você precisa tirar ${notaNecessariareal0[0]} no simulado`);
+                    console.log(notas[0]);
+                    resultado.push(`Você precisa tirar ${notaNecessariareal0[0]} no simulado`);
                 }
 
             }
@@ -124,10 +109,10 @@ function calcularMedia(notas) {
                 const notaNecessaria1 = notaNecessaria(porcentagem1, valorRestante)
                 const notaNecessariareal1 = notaNecessariaReal(notaNecessaria1, 1.5)
                 if (notaNecessariareal1[0] === 11) {
-                    console.log('não tem como ser aprovado');
+                    resultado.push('não tem como ser aprovado');
                 } else {
                     media2 = media2 + notaNecessariareal1[1]
-                    console.log(`Você precisa tirar ${notaNecessariareal1[0]} na avaliação 1`)
+                    resultado.push(`Você precisa tirar ${notaNecessariareal1[0]} na avaliação 1`)
                 }
             }
             if (av2 === false) {
@@ -135,10 +120,10 @@ function calcularMedia(notas) {
                 const notaNecessaria2 = notaNecessaria(porcentagem2, valorRestante)
                 const notaNecessariareal2 = notaNecessariaReal(notaNecessaria2, 1.5)
                 if (notaNecessariareal2[0] === 11) {
-                    console.log('não tem como ser aprovado');
+                    resultado.push('não tem como ser aprovado');
                 } else {
                     media2 = media2 + notaNecessariareal2[1]
-                    console.log(`Você precisa tirar ${notaNecessariareal2[0]} na avaliação 2`);
+                    resultado.push(`Você precisa tirar ${notaNecessariareal2[0]} na avaliação 2`);
                 }
             }
             if (avDiscursiva === false) {
@@ -146,10 +131,10 @@ function calcularMedia(notas) {
                 const notaNecessaria3 = notaNecessaria(porcentagem3, valorRestante)
                 const notaNecessariareal3 = notaNecessariaReal(notaNecessaria3, 4)
                 if (notaNecessariareal3[0] === 11) {
-                    console.log('não tem como ser aprovado');
+                    resultado.push('não tem como ser aprovado');
                 } else {
                     media2 = media2 + notaNecessariareal3[1]
-                    console.log(`Você precisa tirar ${notaNecessariareal3[0]} na avaliação discursiva`);
+                    resultado.push(`Você precisa tirar ${notaNecessariareal3[0]} na avaliação discursiva`);
                 }
             }
             if (avFinal === false) {
@@ -157,24 +142,23 @@ function calcularMedia(notas) {
                 const notaNecessaria4 = notaNecessaria(porcentagem4, valorRestante)
                 const notaNecessariareal4 = notaNecessariaReal(notaNecessaria4, 3)
                 if (notaNecessariareal4[0] === 11) {
-                    console.log('não tem como ser aprovado');
+                    resultado.push('não tem como ser aprovado');
                 } else {
                     media2 = media2 + notaNecessariareal4[1]
-                    console.log(`Você precisa tirar ${notaNecessariareal4[0]} na avaliação final`);
+                    resultado.push(`Você precisa tirar ${notaNecessariareal4[0]} na avaliação final`);
                 }
             }
         }
     }
 
-
-    console.log("Sua média SEM o simulado é: " + media)
+    resultado.push("Sua média SEM o simulado é: " + (media).toFixed(2))
     media = media + notas[0]
-    console.log("Sua média COM o simulado é: " + media)
+    resultado.push("Sua média COM o simulado é: " + (media).toFixed(2))
 
     if (media >= 7) {
-        console.log("Aprovado")
+        resultado.push("Aprovado")
     } else {
-        console.log("Reprovado")
+        resultado.push("Reprovado")
     }
     return resultado
 }

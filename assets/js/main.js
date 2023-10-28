@@ -57,6 +57,7 @@ btnMaisfinal.addEventListener('click',()=>{
 
 const btnCalcular =document.querySelector('[data-js="btn-calcular"]')
 btnCalcular.addEventListener('click',()=>{
+    document.querySelector('[data-js="resultado"]').innerHTML = ''
     let notaSimulado = Number(document.querySelector('[data-js="input-simulado"]').value)
     let notaAv1 = Number(document.querySelector('[data-js="input-av1"]').value)
     let notaAv2 = Number(document.querySelector('[data-js="input-av2"]').value)
@@ -75,7 +76,19 @@ btnCalcular.addEventListener('click',()=>{
     document.querySelector('[data-js="popup"]').style.display = 'block';
     document.querySelector('[data-js="overlay"]').style.display = 'block';
 
-    document.querySelector('[data-js="resultado"]').textContent = `${resultado[0]}`
+    resultadoContainer = document.querySelector('[data-js="resultado"]')
+
+    for(let i = 0; i < resultado.length; i++){
+        const resultadoItem = document.createElement('span')
+        resultadoItem.textContent = resultado[i]
+
+        if(i < resultado.length - 1){
+            resultadoItem.style.marginBottom = '10px'
+        }
+        resultadoItem.style.display = 'block'
+        resultadoContainer.appendChild(resultadoItem)
+    }
+    
 })
 
 const  btnClosepopup = document.querySelector('[data-js="btn-closepopup"]')
