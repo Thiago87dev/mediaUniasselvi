@@ -16,7 +16,7 @@
         </div>
         <div class="avaliacoes">
             <div class="simulado avaliacoes-style">
-                <p class="texto">Simulado</p>
+                <p class="texto">Simulado - peso 0.5</p>
                 <div class="inputs">
                     <button class="btn-menos" data-js="btn-menos-simulado">-</button>
                     <input type="number" data-js="input-simulado" value="0">
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="av1 avaliacoes-style">
-                <p class="texto">Avaliação 1</p>
+                <p class="texto">Avaliação 1 - peso 1.5</p>
                 <div class="inputs">
                     <button class="btn-menos" data-js="btn-menos-av1">-</button>
                     <input type="number" data-js="input-av1" value="0">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="av2 avaliacoes-style">
-                <p class="texto">Avaliação 2</p>
+                <p class="texto">Avaliação 2 - peso 1.5</p>
                 <div class="inputs">
                     <button class="btn-menos" data-js="btn-menos-av2">-</button>
                     <input type="number" data-js="input-av2" value="0">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="av-discursiva avaliacoes-style">
-                <p class="texto">Avaliação Discursiva</p>
+                <p class="texto">Avaliação Discursiva - peso 4</p>
                 <div class="inputs">
                     <button class="btn-menos" data-js="btn-menos-av-discursiva">-</button>
                     <input type="number" data-js="input-av-discursiva" value="0">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="av-final avaliacoes-style">
-                <p class="texto">Avaliação Final</p>
+                <p class="texto">Avaliação Final - peso 3</p>
                 <div class="inputs">
                     <button class="btn-menos" data-js="btn-menos-av-final">-</button>
                     <input type="number" data-js="input-av-final" value="0">
@@ -57,10 +57,20 @@
             </div>
         </div>
         <div class="botoes">
-            <button class="calcular">Calcular</button>
+            <button class="calcular" data-js="btn-calcular">Calcular</button>
         </div>
     </main>
+
+    <div class="popup" data-js="popup">
+        <h2>Resultado:</h2>
+        <p class="resultado" data-js="resultado"></p>
+        <button data-js="btn-closepopup">Fechar</button>
+      </div>
+
+      <div class="overlay" data-js="overlay"></div>
+
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/calculo.js"></script>
 </body>
 
 </html>
