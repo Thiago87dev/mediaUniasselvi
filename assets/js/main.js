@@ -73,7 +73,7 @@ btnCalcular.addEventListener('click',()=>{
     console.log(typeof(notaFinal), notaSimulado, notaAv1, notaAv2, notaDiscursiva, notaFinal);
     let resultado = calcularMedia([notaSimulado, notaAv1, notaAv2, notaDiscursiva, notaFinal])
 
-    document.querySelector('[data-js="popup"]').show()
+    document.querySelector('[data-js="popup"]').showModal()
 
     resultadoContainer = document.querySelector('[data-js="resultado"]')
 
