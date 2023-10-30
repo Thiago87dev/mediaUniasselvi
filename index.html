@@ -13,11 +13,11 @@
     <main class="principal">
         <header>
             <h1 class="titulo">Simulador de média</h1>
-            <h2 class="subtitulo">Análise e desenvolvimento de sistemas</h2>
+            <h2 class="subtitulo">Zero se ainda não fez a avaliação</h2>
         </header>
         <section class="avaliacoes">
             <article class="avaliacao-card">
-                <p>Simulado</p>
+                <p>Simulado - peso 0.5</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-simulado">-</button>
                     <input type="number" data-js="input-simulado" value="0">
@@ -25,7 +25,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação 1</p>
+                <p>Avaliação 1 - peso 1.5</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av1">-</button>
                     <input type="number" data-js="input-av1" value="0">
@@ -33,7 +33,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação 2</p>
+                <p>Avaliação 2 - peso 1.5</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av2">-</button>
                     <input type="number" data-js="input-av2" value="0">
@@ -41,7 +41,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação Discursiva</p>
+                <p>Avaliação Discursiva - peso 4</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av-discursiva">-</button>
                     <input type="number" data-js="input-av-discursiva" value="0">
@@ -49,7 +49,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação Final</p>
+                <p>Avaliação Final - peso 3</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av-final">-</button>
                     <input type="number" data-js="input-av-final" value="0">
@@ -59,10 +59,24 @@
         </section>
         <footer class="principal-rodape">
             <button class="btn-discreto">Limpar</button>
-            <button class="btn-principal">Calcular</button>
+            <button class="btn-principal" data-js="btn-calcular">Calcular</button>
         </footer>
     </main>
+
+    <div class="popup" data-js="popup">
+        <h2>Resultado:</h2>
+        <p class="resultado" data-js="resultado"></p>
+        <button class="btn-closepopup" data-js="btn-closepopup">Fechar</button>
+    </div>
+
+    <div class="overlay" data-js="overlay"></div>
+
+    <footer class="rodape">
+        feito com ♥ por <a href="https://github.com/Thiago87dev">Thiago Alves</a>
+    </footer>
+
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/calculo.js"></script>
 </body>
 
 </html>
