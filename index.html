@@ -17,7 +17,7 @@
         </header>
         <section class="avaliacoes">
             <article class="avaliacao-card">
-                <p>Simulado - peso 0.5</p>
+                <p><small>peso 0.5</small><br>Simulado</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-simulado">-</button>
                     <input type="number" data-js="input-simulado" value="0">
@@ -25,7 +25,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação 1 - peso 1.5</p>
+                <p><small>peso 1.5</small><br>Avaliação 1</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av1">-</button>
                     <input type="number" data-js="input-av1" value="0">
@@ -33,7 +33,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação 2 - peso 1.5</p>
+                <p><small>peso 1.5</small><br>Avaliação 2</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av2">-</button>
                     <input type="number" data-js="input-av2" value="0">
@@ -41,7 +41,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação Discursiva - peso 4</p>
+                <p><small>peso 4</small><br>Avaliação Discursiva</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av-discursiva">-</button>
                     <input type="number" data-js="input-av-discursiva" value="0">
@@ -49,7 +49,7 @@
                 </div>
             </article>
             <article class="avaliacao-card">
-                <p>Avaliação Final - peso 3</p>
+                <p><small>Peso 3</small><br>Avaliação Final</p>
                 <div class="input-nota-group">
                     <button class="btn-secundario" data-js="btn-menos-av-final">-</button>
                     <input type="number" data-js="input-av-final" value="0">
@@ -57,22 +57,22 @@
                 </div>
             </article>
         </section>
-        <footer class="principal-rodape">
-            <button class="btn-discreto">Limpar</button>
+        <footer class="text-rigth">
+            <button class="btn-discreto-escuro" data-js="btn-limpar">Limpar</button>
             <button class="btn-principal" data-js="btn-calcular">Calcular</button>
         </footer>
     </main>
 
-    <div class="popup" data-js="popup">
+    <dialog class="popup" id="resultado-popup" data-js="popup">
         <h2>Resultado:</h2>
         <p class="resultado" data-js="resultado"></p>
-        <button class="btn-closepopup" data-js="btn-closepopup">Fechar</button>
-    </div>
+        <footer class="text-rigth">
+            <button class="btn-discreto-claro" data-js="btn-closepopup">Fechar</button>
+        </footer>
+    </dialog>
 
-    <div class="overlay" data-js="overlay"></div>
-
-    <footer class="rodape">
-        feito com ♥ por <a href="https://github.com/Thiago87dev">Thiago Alves</a>
+    <footer>
+        <p>feito com ♥ por <a href="https://github.com/Thiago87dev" target="_blank">Thiago Alves</a></p>
     </footer>
 
     <script src="assets/js/main.js"></script>

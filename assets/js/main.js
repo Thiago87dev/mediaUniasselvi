@@ -73,8 +73,7 @@ btnCalcular.addEventListener('click',()=>{
     console.log(typeof(notaFinal), notaSimulado, notaAv1, notaAv2, notaDiscursiva, notaFinal);
     let resultado = calcularMedia([notaSimulado, notaAv1, notaAv2, notaDiscursiva, notaFinal])
 
-    document.querySelector('[data-js="popup"]').style.display = 'block';
-    document.querySelector('[data-js="overlay"]').style.display = 'block';
+    document.querySelector('[data-js="popup"]').show()
 
     resultadoContainer = document.querySelector('[data-js="resultado"]')
 
@@ -95,10 +94,16 @@ const  btnClosepopup = document.querySelector('[data-js="btn-closepopup"]')
 btnClosepopup.addEventListener('click', closePopup)
 
 function closePopup() {
-    document.querySelector('[data-js="popup"]').style.display = 'none';
-    document.querySelector('[data-js="overlay"]').style.display = 'none';
-  }
+    document.querySelector('[data-js="popup"]').close()
+}
 
-  document.querySelector('[data-js="overlay"]').addEventListener('click', closePopup);
+const btnLimpar = document.querySelector('[data-js="btn-limpar"]')
+btnLimpar.addEventListener('click', limpar)
 
-
+function limpar() {
+    document.querySelector('[data-js="input-simulado"]').value = 0
+    document.querySelector('[data-js="input-av1"]').value = 0
+    document.querySelector('[data-js="input-av2"]').value = 0
+    document.querySelector('[data-js="input-av-discursiva"]').value = 0
+    document.querySelector('[data-js="input-av-final"]').value = 0
+}
