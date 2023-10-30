@@ -7,6 +7,7 @@ function calcularMedia(notas) {
     let avDiscursiva = false
     let avFinal = false
     let somaPesoNotas = 0
+    let reprovado = false
 
     for (let i = 0; i < notas.length; i++) {
         if (i === 0) {
@@ -95,9 +96,10 @@ function calcularMedia(notas) {
                 const porcentagem0 = 0.5 / somaPesoNotas * 100
                 const notaNecessaria0 = notaNecessaria(porcentagem0, valorRestante)
                 const notaNecessariareal0 = notaNecessariaReal(notaNecessaria0, 0.5)
-                if (notaNecessariareal0[0] === 11) {
+                if (notaNecessariareal0[0] === 11 && reprovado === false) {
                     resultado.push(`Não tem como ser aprovado`);
-                } else {   
+                    reprovado = true
+                } else if(notaNecessariareal0[0] !== 11) {   
                     media2 = media2 + notaNecessariareal0[1]
                     console.log(notas[0]);
                     resultado.push(`Você precisa tirar ${notaNecessariareal0[0]} no simulado`);
@@ -108,9 +110,10 @@ function calcularMedia(notas) {
                 const porcentagem1 = 1.5 / somaPesoNotas * 100
                 const notaNecessaria1 = notaNecessaria(porcentagem1, valorRestante)
                 const notaNecessariareal1 = notaNecessariaReal(notaNecessaria1, 1.5)
-                if (notaNecessariareal1[0] === 11) {
+                if (notaNecessariareal1[0] === 11 && reprovado === false) {
                     resultado.push('Não tem como ser aprovado');
-                } else {
+                    reprovado = true
+                } else if(notaNecessariareal1[0] !== 11){
                     media2 = media2 + notaNecessariareal1[1]
                     resultado.push(`Você precisa tirar ${notaNecessariareal1[0]} na avaliação 1`)
                 }
@@ -119,31 +122,34 @@ function calcularMedia(notas) {
                 const porcentagem2 = 1.5 / somaPesoNotas * 100
                 const notaNecessaria2 = notaNecessaria(porcentagem2, valorRestante)
                 const notaNecessariareal2 = notaNecessariaReal(notaNecessaria2, 1.5)
-                if (notaNecessariareal2[0] === 11) {
+                if (notaNecessariareal2[0] === 11 && reprovado === false) {
                     resultado.push('Não tem como ser aprovado');
-                } else {
+                    reprovado = true
+                } else if(notaNecessariareal2[0] !== 11){
                     media2 = media2 + notaNecessariareal2[1]
                     resultado.push(`Você precisa tirar ${notaNecessariareal2[0]} na avaliação 2`);
                 }
             }
-            if (avDiscursiva === false) {
+            if (avDiscursiva === false && reprovado === false) {
                 const porcentagem3 = 4 / somaPesoNotas * 100
                 const notaNecessaria3 = notaNecessaria(porcentagem3, valorRestante)
                 const notaNecessariareal3 = notaNecessariaReal(notaNecessaria3, 4)
                 if (notaNecessariareal3[0] === 11) {
                     resultado.push('Não tem como ser aprovado');
-                } else {
+                    reprovado = true
+                } else if(notaNecessariareal3[0] !== 11){
                     media2 = media2 + notaNecessariareal3[1]
                     resultado.push(`Você precisa tirar ${notaNecessariareal3[0]} na avaliação discursiva`);
                 }
             }
-            if (avFinal === false) {
+            if (avFinal === false && reprovado === false) {
                 const porcentagem4 = 3 / somaPesoNotas * 100
                 const notaNecessaria4 = notaNecessaria(porcentagem4, valorRestante)
                 const notaNecessariareal4 = notaNecessariaReal(notaNecessaria4, 3)
                 if (notaNecessariareal4[0] === 11) {
                     resultado.push('Não tem como ser aprovado');
-                } else {
+                    reprovado = true
+                } else if(notaNecessariareal4[0] !== 11){
                     media2 = media2 + notaNecessariareal4[1]
                     resultado.push(`Você precisa tirar ${notaNecessariareal4[0]} na avaliação final`);
                 }
