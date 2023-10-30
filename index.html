@@ -1,77 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Simulador de média da Uniasselvi</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <main class="principal">
-        <div class="titulo">
-            <h1 class="titulo-texto">Simulador de média</h1>
-            <h2 class="titulo-texto2">Zero se ainda não fez a avaliação</h2>
-        </div>
-        <div class="avaliacoes">
-            <div class="simulado avaliacoes-style">
-                <p class="texto">Simulado - peso 0.5</p>
-                <div class="inputs">
-                    <button class="btn-menos" data-js="btn-menos-simulado">-</button>
+        <header>
+            <h1 class="titulo">Simulador de média</h1>
+            <h2 class="subtitulo">Zero se ainda não fez a avaliação</h2>
+        </header>
+        <section class="avaliacoes">
+            <article class="avaliacao-card">
+                <p><small>peso 0.5</small><br>Simulado</p>
+                <div class="input-nota-group">
+                    <button class="btn-secundario" data-js="btn-menos-simulado">-</button>
                     <input type="number" data-js="input-simulado" value="0">
-                    <button class="btn-mais" data-js="btn-mais-simulado">+</button>
+                    <button class="btn-secundario" data-js="btn-mais-simulado">+</button>
                 </div>
-            </div>
-            <div class="av1 avaliacoes-style">
-                <p class="texto">Avaliação 1 - peso 1.5</p>
-                <div class="inputs">
-                    <button class="btn-menos" data-js="btn-menos-av1">-</button>
+            </article>
+            <article class="avaliacao-card">
+                <p><small>peso 1.5</small><br>Avaliação 1</p>
+                <div class="input-nota-group">
+                    <button class="btn-secundario" data-js="btn-menos-av1">-</button>
                     <input type="number" data-js="input-av1" value="0">
-                    <button class="btn-mais" data-js="btn-mais-av1">+</button>
+                    <button class="btn-secundario" data-js="btn-mais-av1">+</button>
                 </div>
-            </div>
-            <div class="av2 avaliacoes-style">
-                <p class="texto">Avaliação 2 - peso 1.5</p>
-                <div class="inputs">
-                    <button class="btn-menos" data-js="btn-menos-av2">-</button>
+            </article>
+            <article class="avaliacao-card">
+                <p><small>peso 1.5</small><br>Avaliação 2</p>
+                <div class="input-nota-group">
+                    <button class="btn-secundario" data-js="btn-menos-av2">-</button>
                     <input type="number" data-js="input-av2" value="0">
-                    <button class="btn-mais" data-js="btn-mais-av2">+</button>
+                    <button class="btn-secundario" data-js="btn-mais-av2">+</button>
                 </div>
-            </div>
-            <div class="av-discursiva avaliacoes-style">
-                <p class="texto">Avaliação Discursiva - peso 4</p>
-                <div class="inputs">
-                    <button class="btn-menos" data-js="btn-menos-av-discursiva">-</button>
+            </article>
+            <article class="avaliacao-card">
+                <p><small>peso 4</small><br>Avaliação Discursiva</p>
+                <div class="input-nota-group">
+                    <button class="btn-secundario" data-js="btn-menos-av-discursiva">-</button>
                     <input type="number" data-js="input-av-discursiva" value="0">
-                    <button class="btn-mais" data-js="btn-mais-av-discursiva">+</button>
+                    <button class="btn-secundario" data-js="btn-mais-av-discursiva">+</button>
                 </div>
-            </div>
-            <div class="av-final avaliacoes-style">
-                <p class="texto">Avaliação Final - peso 3</p>
-                <div class="inputs">
-                    <button class="btn-menos" data-js="btn-menos-av-final">-</button>
+            </article>
+            <article class="avaliacao-card">
+                <p><small>Peso 3</small><br>Avaliação Final</p>
+                <div class="input-nota-group">
+                    <button class="btn-secundario" data-js="btn-menos-av-final">-</button>
                     <input type="number" data-js="input-av-final" value="0">
-                    <button class="btn-mais" data-js="btn-mais-av-final">+</button>
+                    <button class="btn-secundario" data-js="btn-mais-av-final">+</button>
                 </div>
-            </div>
-        </div>
-        <div class="botoes">
-            <button class="calcular" data-js="btn-calcular">Calcular</button>
-        </div>
+            </article>
+        </section>
+        <footer class="text-rigth">
+            <button class="btn-discreto-escuro" data-js="btn-limpar">Limpar</button>
+            <button class="btn-principal" data-js="btn-calcular">Calcular</button>
+        </footer>
     </main>
 
-    <div class="popup" data-js="popup">
+    <dialog class="popup" id="resultado-popup" data-js="popup">
         <h2>Resultado:</h2>
         <p class="resultado" data-js="resultado"></p>
-        <button class="btn-closepopup" data-js="btn-closepopup">Fechar</button>
-      </div>
+        <footer class="text-rigth">
+            <button class="btn-discreto-claro" data-js="btn-closepopup">Fechar</button>
+        </footer>
+    </dialog>
 
-      <div class="overlay" data-js="overlay"></div>
-
-      <footer class="rodape">
-        feito com ♥ por <a href="https://github.com/Thiago87dev">Thiago Alves</a>
-      </footer>
+    <footer>
+        <p>feito com ♥ por <a href="https://github.com/Thiago87dev" target="_blank">Thiago Alves</a></p>
+    </footer>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/calculo.js"></script>
