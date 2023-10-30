@@ -71,6 +71,7 @@ input[type="number"]:focus{
 
 /* Layout */
 .principal{
+    margin-top: 180px;
     padding: 20px;
     border-radius: 7px;
     background-color: #1D1D1B;
