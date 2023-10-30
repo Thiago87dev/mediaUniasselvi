@@ -3,7 +3,7 @@
     src: url(../fonts/Inter-Regular.ttf);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: inter-regular;
@@ -11,11 +11,10 @@
     outline: none;
 }
 
-body{
+body {
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #2e2e2e;
@@ -23,14 +22,13 @@ body{
 
 body > footer > p {
     margin: 12px 0;
-    text-align: center
-    ;
+    text-align: center;
 }
 
-.titulo{
+.titulo {
     font-size: 20px;
 }
-.subtitulo{
+.subtitulo {
     color: #b3b3b3;
     font-size: 15px;
 }
@@ -44,10 +42,10 @@ body > footer > p {
     flex: 1;
 }
 .input-nota-group > input {
-    flex: 2;
+    flex: 5;
 }
 
-input{
+input {
     height: 30px;
     width: 90px;
     font-size: 20px;
@@ -59,32 +57,34 @@ input{
 }
 
 input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button{
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-input[type="number"]{
+input[type="number"] {
     -moz-appearance: textfield;
     margin: 0px 8px;
 }
-input[type="number"]:focus{
+input[type="number"]:focus {
     border-bottom: 1px solid #00A09F;
 }
 
 /* Layout */
-.principal{
-    margin-top: 180px;
+.principal {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 260px;
     padding: 20px;
     border-radius: 7px;
     background-color: #1D1D1B;
     box-shadow: 0px 0px 20px #1b1b1b;
 }
 
-.avaliacoes{
+.avaliacoes {
     padding: 20px 0;
 }
 
-.avaliacao-card{
+.avaliacao-card {
     padding: 12px;
     border-radius: 7px;
     background-color: #2A2A27;
@@ -127,7 +127,7 @@ small {
 }
 
 /* Botões */
-.btn-principal{
+.btn-principal {
     padding: 8px 16px;
     border-radius: 7px;
     font-size: 15px;
@@ -142,7 +142,7 @@ small {
     box-shadow: 0 0 16px rgba(25, 182, 182, 0.2);
 }
 
-.btn-secundario{
+.btn-secundario {
     padding: 6px 12px;
     background-color: #3d3d39;
     font-size: 15px;
@@ -152,7 +152,7 @@ small {
     transition: .2s;
 }
 
-.btn-secundario:hover{
+.btn-secundario:hover {
     background-color: #4e4e4a;
 }
 
