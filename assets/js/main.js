@@ -1,4 +1,4 @@
-
+window.onload = preencherInputNotas
 
 const btnMenosSimulado = document.querySelector('[data-js="btn-menos-simulado"]')
 btnMenosSimulado.addEventListener('click',()=>{
@@ -59,10 +59,15 @@ const btnCalcular =document.querySelector('[data-js="btn-calcular"]')
 btnCalcular.addEventListener('click',()=>{
     document.querySelector('[data-js="resultado"]').innerHTML = ''
     let notaSimulado = Number(document.querySelector('[data-js="input-simulado"]').value)
+    localStorage.setItem('simulado', notaSimulado)
     let notaAv1 = Number(document.querySelector('[data-js="input-av1"]').value)
+    localStorage.setItem('av1', notaAv1)
     let notaAv2 = Number(document.querySelector('[data-js="input-av2"]').value)
+    localStorage.setItem('av2', notaAv2)
     let notaDiscursiva = Number(document.querySelector('[data-js="input-av-discursiva"]').value)
+    localStorage.setItem('avDiscursiva', notaDiscursiva)
     let notaFinal = Number(document.querySelector('[data-js="input-av-final"]').value)
+    localStorage.setItem('avFinal', notaFinal)
     
     if(notaSimulado === 0) notaSimulado = 'n'
     if(notaAv1 === 0) notaAv1 = 'n'
@@ -107,3 +112,26 @@ function limpar() {
     document.querySelector('[data-js="input-av-discursiva"]').value = 0
     document.querySelector('[data-js="input-av-final"]').value = 0
 }
+
+function preencherInputNotas (){
+    const inputSimulado = document.querySelector('[data-js="input-simulado"]')
+    const notaArmazenadaSimulado = localStorage.getItem('simulado')
+    if(notaArmazenadaSimulado) inputSimulado.value = notaArmazenadaSimulado
+
+    const inputAv1 = document.querySelector('[data-js="input-av1"]')
+    const notaArmazenadaAv1 = localStorage.getItem('av1')
+    if(notaArmazenadaAv1) inputAv1.value = notaArmazenadaAv1
+
+    const inputAv2 = document.querySelector('[data-js="input-av2"]')
+    const notaArmazenadaAv2 = localStorage.getItem('av2')
+    if(notaArmazenadaAv2) inputAv2.value = notaArmazenadaAv2
+
+    const inputAvDiscursiva = document.querySelector('[data-js="input-av-discursiva"]')
+    const notaArmazenadaAvDiscursiva = localStorage.getItem('avDiscursiva')
+    if(notaArmazenadaAvDiscursiva) inputAvDiscursiva.value = notaArmazenadaAvDiscursiva
+
+    const inputAvFinal = document.querySelector('[data-js="input-av-final"]')
+    const notaArmazenadaAvFinal = localStorage.getItem('avFinal')
+    if(notaArmazenadaAvFinal) inputAvFinal.value = notaArmazenadaAvFinal
+}
+
